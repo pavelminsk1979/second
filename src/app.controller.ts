@@ -1,13 +1,9 @@
 import { Controller, Get, Inject, Param } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ClientProxy } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
-  constructor(
-    @Inject('NEW_NAME_SERVICE') private client: ClientProxy,
-    private readonly appService: AppService,
-  ) {}
+  constructor(@Inject('NEW_NAME_SERVICE') private client: ClientProxy) {}
 
   @Get('sum/:num1/:num2/:num3')
   sumNumber(
@@ -15,11 +11,12 @@ export class AppController {
     @Param('num2') num2: string,
     @Param('num3') num3: string,
   ) {
-    const res = this.appService.sum(num1, num2, num3);
-    console.log(res);
+    const res = [Number(num1), Number(num2), Number(num3)];
+
     const pattern = { cmd: 'sum1' };
 
     const result = this.client.send<number>(pattern, res);
+
     return result;
   }
 }
