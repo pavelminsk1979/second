@@ -697,6 +697,14 @@
     path-to-regexp "3.3.0"
     tslib "2.8.1"
 
+"@nestjs/microservices@^10.4.12":
+  version "10.4.12"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-10.4.12.tgz#dfe8d39333197e162fb02319f22d4d790c6424ac"
+  integrity sha512-OYo0ePq/4jLKZr31uvfpe2w6BPVWNTpGavgKxSgwLD2B9ClbvvIMSyNEAXiwSfkRP8mmHGZyI/yB6HXYVa7wHQ==
+  dependencies:
+    iterare "1.2.1"
+    tslib "2.8.1"
+
 "@nestjs/platform-express@^10.0.0":
   version "10.4.12"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-10.4.12.tgz#2a9c3ee053b29083e154d6622b8ded4e284da894"
